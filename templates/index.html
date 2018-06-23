@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="form">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <p class="lead">
+          {% if message %}
+            {{ message }}
+          {% endif %}
+        </p>
+
+        <p class="lead">  
+          {% if result %}
+            {{ result }}
+          {% endif %}
+          
+        </p>
+        <form action="/result" method="post" class="form-inline">
+          <label for="name"></label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="ex.山田花子">
+          <button type="submit" class="btn btn-default">診断する</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
