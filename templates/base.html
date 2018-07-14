@@ -1,7 +1,7 @@
 {% extends 'bootstrap/base.html' %}
 
 {% block title %}
- <h2>エロ診断メ~カ~</h2>
+ エロ診断メ~カ~
 {% endblock %}
 
 {% block navbar %}
@@ -9,9 +9,12 @@
 {% endblock %}
 
 {% block content %}
-   <img src="/static/images/busaiku_slime.png" alt="busaiku_slime">
+  <div class="container-fluid text-center">
+    <img src="/static/images/busaiku_slime.png">
+    <h3>エロ大魔神</h3>
    {% block sub_content %}
    {% endblock %}
-   
+  </div>
+
 {% endblock %}
 

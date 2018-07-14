@@ -15,8 +15,7 @@ Bootstrap(app)
 
 @app.route('/')
 def index():
-    message = "名前を入力するのじゃ"
-    return render_template("index.html", message = message)
+    return render_template("index.html")
 
 @app.route('/result', methods=['GET', 'POST'])
 def result():
@@ -34,11 +33,7 @@ def result():
  
     else:
         return redirect(url_for('index'))
-
-@app.route('/manual')
-def manual():
-    return render_template('manual.html')
-    
+   
 @app.route('/about_us')
 def about_us():
     return render_template('about_us.html') 
