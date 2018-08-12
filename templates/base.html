@@ -1,41 +1,34 @@
-{% extends 'bootstrap/base.html' %}
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+  エロ診断メーカー
+{% endblock %}
+
+{% block navbar %}
+  {% include "_navbar.html" %}
+{% endblock %}
 
 {% block content %}
-<nav class="navbar navbar-expand-md navbar-light bg-light">
-  <a class="navbar-brand" href="index.html"><!-- suspicious -->
-    <img src="#" width="30" height="30" alt="">エロ診断メーカー</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="who.html">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="products.html" target="_blank">Other Service</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
 
   <div class="container-fluid text-center">
     <img src="/static/images/busaiku_slime.png">
-    <h3>エロ大魔神</h3>
-   {% block sub_content %}
-   {% endblock %}
+    <h3>エロ大魔神様</h3>
   </div>
 
+{% block sub_content %}
+{% endblock %}
+    
   <form action="/result" method="post" class="form-inline">
-    <label for="name"></label>
-    <input type="text" class="form-control" id="name" name="name" placeholder="ex.山田花子">
-    <button type="submit" class="btn btn-primary btn-lg">診断する</button>
+    <div class="container-fluid text-center">
+      <label for="name"></label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="ex.山田花子">
+      <button type="submit" class="btn btn-primary btn-lg">診断する</button>
+    </div>
   </form>
-
+ 
   <footer class="">
     <div class="text-center text-white">
       <p>&#169;2018 Ed.D.</p>
     </div>
   </footer>
-
 {% endblock %}
