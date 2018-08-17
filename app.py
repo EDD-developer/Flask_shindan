@@ -3,10 +3,11 @@
 
 from flask import Flask, request, render_template, url_for, redirect
 import random as rnd
-from flask_bootstrap import Bootstrap
+#from flask_bootstrap import Bootstrap
+import model
 
 app = Flask(__name__)
-bootstrap = Bootstrap(app)
+#bootstrap = Bootstrap(app)
 
 @app.route("/")
 def index():
@@ -16,16 +17,13 @@ def index():
 def result():
     if request.method == "POST":
         my_name = request.form["name"]
-        message = "これが{}の診断結果じゃ。ちなみにワシゃ500くらい。".format(my_name)
-        
-        results = ["貴様の精力は9000000000000じゃと!? 参った...",
-                   "貴様の精力は-5353535353535353。赤マムシでも飲んで出直すんじゃな。",
-                   "貴様の精力は530。ワシといい勝負じゃな。フォッフォッフォ。"]
-                
-        my_result = rnd.choice(results)
+        message = "これが「{}」の診断結果じゃ。ちなみにワシは500くらいじゃぞ。".format(my_name)
+        result = model.diagnotic(len(my_name))
+        type_name, labels, character = model.detail_diagnostic(len(my_name))
 
-        return render_template("result.html", message = message, result = my_result)    
- 
+        return render_template("result.html", message = message, result = result, 
+                                type_name = type_name, labels = labels, character = character)
+
     else:
         return redirect(url_for("index"))
    
