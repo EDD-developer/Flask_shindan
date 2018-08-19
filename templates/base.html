@@ -33,23 +33,28 @@
     {% block content %}
 
     <div class="container-fluid text-center">
-       <img src="/static/images/busaiku.png" width="150px">
-       <h3>エロ大魔神様</h3>
-    </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+              <img src="/static/images/busaiku.png" width="150px">
+              <h4>エロ大魔神様</h4>
 
-    {% block sub_content %}
-    {% endblock %}
+              {% block sub_content %}
+              {% endblock %}
     
-    <form action="/result" method="post" class="form-inline">
-       <div class="container-fluid text-center">
-          <label for="name"></label>
-          <input type="text" class="form-control" id="name" name="name" placeholder="ex.Hanako" style="width: 200px">
-          <button type="submit" class="btn btn-primary btn-lg" style="margin: 20px">診断する</button>
-       </div>
-    </form>
-
+              <form action="/result" method="post" class="form-inline">
+                <div class="container-fluid text-center">
+                  <label for="name"></label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="ex.Hanako">
+                  <button type="submit" class="btn btn-primary btn-lg" style="margin: 20px">診断する</button>
+                </div>
+              </form>
+            </div>    <!--close col-md-8-->
+            <div class="col-md-2"></div>
+        </div>   <!--close row-->
+    </div>    <!--close container-->
+    
     {% endblock %}
 
   </body>
- 
 </html>
