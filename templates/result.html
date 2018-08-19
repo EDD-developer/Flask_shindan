@@ -2,14 +2,14 @@
 
 {% block sub_content %}
 
-<div class="container-fluid text-center">
+<div class="container-fluid text-center" style="width: 500px">
   <div class="form">
     <div class="row">
       <div class="col-md-12">
         <p><h5>{{ message }}</h5></p>
         <p><h5>{{ result }}</h5></p>
-        <p><h5>おヌシは{{ type_name }}じゃ。</h5></p>
         <canvas id="myChart"></canvas>
+        <p><h5>おヌシは「{{ type_name }}」じゃ。</h5></p>
         <a href="http://twitter.com/share?url=共有したいURL&text=まだエロ診断メーカーであそんでないの？&hashtags=エロ診断メーカー" target=”_blank”><img id="Twitter" src="../static/images/twitter.png" alt="シェア" style="height: 50px; width: 50px;"></a>
       </div>
     </div>
@@ -48,7 +48,7 @@
                  }
               }
             );
-    ctx.canvas.height = 100;      
+    ctx.canvas.height = 200;      
 </script>
 
 {% endblock %}
