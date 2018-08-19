@@ -41,7 +41,7 @@ def detail_diagnostic(name_length):
 
     type_name = type[0]
     character = type[1:]
-    labels = ["アブノーマル度", "Sexの際の平常時からの豹変度", "夜の営みに対する自信", "ピロートーク力", "Mっ気"]
+    labels = ["アブノーマル度", "Sex時の豹変度", "夜の営みに対する自信", "ピロートーク力", "Mっ気"]
 
     return type_name, labels, character
     
