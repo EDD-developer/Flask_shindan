@@ -17,7 +17,7 @@ def index():
 def result():
     if request.method == "POST":
         my_name = request.form["name"]
-        message = "これが「{}」の診断結果じゃ。ちなみにワシは500くらいじゃぞ。".format(my_name)
+        message = "これが「{}」の診断結果じゃ。".format(my_name)
         result = model.diagnotic(len(my_name))
         type_name, labels, character = model.detail_diagnostic(len(my_name))
 
