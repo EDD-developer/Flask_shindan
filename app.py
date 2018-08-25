@@ -3,11 +3,9 @@
 
 from flask import Flask, request, render_template, url_for, redirect
 import random as rnd
-#from flask_bootstrap import Bootstrap
 import model
 
 app = Flask(__name__)
-#bootstrap = Bootstrap(app)
 
 @app.route("/")
 def index():
